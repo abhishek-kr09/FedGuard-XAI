@@ -14,7 +14,7 @@ The final system trains clients, detects suspicious behavior, filters or robustl
 
 ## Phase roadmap
 
-### Phase 0 - Project setup
+### ✅ Completed - Phase 0: Project setup
 
 Set up the Git repository, Python 3.10 environment, pinned dependencies, directory layout, and `.gitignore`. Verify that the environment and test discovery are reproducible.
 
