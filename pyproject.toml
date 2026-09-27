@@ -7,7 +7,7 @@ name = "fedguard-xai"
 version = "0.1.0"
 description = "Explainable federated intrusion detection with poisoning detection and defense"
 readme = "README.md"
-requires-python = ">=3.10,<3.11"
+requires-python = ">=3.10,<3.13"
 dependencies = [
   "numpy==1.26.4",
   "pandas==2.2.3",
