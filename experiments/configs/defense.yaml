@@ -1,0 +1,16 @@
+experiment: defended_federated_learning
+seed: 42
+clients: 5
+rounds: 10
+local_epochs: 1
+poisoning:
+  enabled: true
+  fraction: 0.2
+  attack: label_flip
+defense:
+  enabled: true
+  method: trimmed_mean
+  trim_fraction: 0.2
+model:
+  type: random_forest
+  n_estimators: 100

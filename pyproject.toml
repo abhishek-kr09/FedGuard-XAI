@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fedguard-xai"
+version = "0.1.0"
+description = "Explainable federated intrusion detection with poisoning detection and defense"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+  "numpy==1.26.4",
+  "pandas==2.2.3",
+  "scikit-learn==1.5.2",
+  "pyyaml==6.0.2",
+  "matplotlib==3.9.2",
+  "seaborn==0.13.2",
+  "shap==0.46.0",
+  "streamlit==1.39.0",
+  "pytest==8.3.3",
+  "torch==2.5.1",
+  "flwr==1.13.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.setuptools.packages.find]
+include = ["src*"]

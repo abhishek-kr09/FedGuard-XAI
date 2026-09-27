@@ -1,0 +1,10 @@
+experiment: clean_federated_learning
+seed: 42
+clients: 5
+rounds: 10
+local_epochs: 1
+poisoning:
+  enabled: false
+model:
+  type: random_forest
+  n_estimators: 100

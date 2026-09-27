@@ -1,0 +1,30 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Testing
+.pytest_cache/
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python packages
+*.egg-info/
+
+# Experiment results
+results/metrics/*
+results/plots/*
+results/logs/*
+!results/**/.gitkeep
+
+# Dataset
+data/raw/*
+data/processed/*
+!data/**/.gitkeep
