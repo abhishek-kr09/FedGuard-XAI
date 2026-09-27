@@ -16,7 +16,7 @@ The final system trains clients, detects suspicious behavior, filters or robustl
 
 ### ✅ Completed - Phase 0: Project setup
 
-Set up the Git repository, Python 3.10 environment, pinned dependencies, directory layout, and `.gitignore`. Verify that the environment and test discovery are reproducible.
+Set up the Git repository, Python 3.12 environment, pinned dependencies, directory layout, and `.gitignore`. Verify that the environment and test discovery are reproducible.
 
 ### Phase 1 - Dataset analysis
 
@@ -76,15 +76,15 @@ Demonstrate the complete flow from dataset to IDS, FL, poisoning, detection, SHA
 
 ## Phase 0 setup
 
-FedGuard-XAI targets **CPython 3.10**. The supported version is constrained in `pyproject.toml` and reflected in the pinned `requirements.txt`.
+FedGuard-XAI targets **CPython 3.12**. The supported version is constrained in `pyproject.toml` and reflected in the pinned `requirements.txt`.
 
 ### Windows PowerShell
 
-Install Python 3.10, then create and activate the project environment:
+Use Python 3.12 to create and activate the project environment:
 
 ```powershell
 cd D:\FedGuard-XAI
-py -3.10 -m venv .venv
+py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1
 python --version
 python -m pip install --upgrade pip
@@ -92,7 +92,7 @@ python -m pip install -r requirements.txt
 python -m pip install -e . --no-deps
 ```
 
-The expected interpreter output begins with `Python 3.10`. The editable install makes the local `src` package importable while `--no-deps` avoids installing a second dependency set.
+The expected interpreter output begins with `Python 3.12`. The editable install makes the local `src` package importable while `--no-deps` avoids installing a second dependency set.
 
 ### Repository initialization
 
@@ -123,7 +123,7 @@ python -m pytest
 python -m compileall src experiments dashboard
 ```
 
-Phase 0 is complete when the version check reports Python 3.10, the dependency import check succeeds, tests are collected, and compilation completes without errors. Later phases will add the PyTorch MLP and Flower simulation on top of this foundation.
+Phase 0 is complete when the version check reports Python 3.12, the dependency import check succeeds, tests are collected, and compilation completes without errors. Later phases will add the PyTorch MLP and Flower simulation on top of this foundation.
 
 ## Dataset
 

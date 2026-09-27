@@ -1,8 +1,12 @@
-numpy>=1.26
-pandas>=2.2
-scikit-learn>=1.4
-pyyaml>=6.0
-matplotlib>=3.8
-seaborn>=0.13
-# Python 3.10 baseline. Keep this file stable for reproducible experiments.
-streamlit>=1.35
+# Python 3.12 baseline. Keep this file stable for reproducible experiments.
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.5.2
+pyyaml==6.0.2
+matplotlib==3.9.2
+seaborn==0.13.2
+shap==0.46.0
+streamlit==1.39.0
+pytest==8.3.3
+torch==2.5.1
+flwr==1.13.1
