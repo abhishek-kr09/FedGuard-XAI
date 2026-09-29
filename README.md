@@ -18,9 +18,9 @@ The final system trains clients, detects suspicious behavior, filters or robustl
 
 Set up the Git repository, Python 3.12 environment, pinned dependencies, directory layout, and `.gitignore`. Verify that the environment and test discovery are reproducible.
 
-### Phase 1 - Dataset analysis
+### ✅ Completed - Phase 1: Dataset analysis
 
-Load CIC-IDS2017 CSV files and inspect columns, labels, class distribution, missing values, infinity values, duplicates, and basic traffic statistics. Produce exploratory tables and visualizations.
+Loaded all eight CIC-IDS2017 CSV files and inspected columns, labels, class distribution, missing values, infinity values, chunk-level duplicates, and basic traffic statistics. Produced exploratory tables and class-distribution visualizations in `notebooks/01_data_analysis.ipynb`.
 
 ### Phase 2 - Data preprocessing
 
