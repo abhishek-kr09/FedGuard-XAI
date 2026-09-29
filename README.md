@@ -22,9 +22,9 @@ Set up the Git repository, Python 3.12 environment, pinned dependencies, directo
 
 Loaded all eight CIC-IDS2017 CSV files and inspected columns, labels, class distribution, missing values, infinity values, chunk-level duplicates, and basic traffic statistics. Produced exploratory tables and class-distribution visualizations in `notebooks/01_data_analysis.ipynb`.
 
-### Phase 2 - Data preprocessing
+### ✅ Completed - Phase 2: Data preprocessing
 
-Clean the dataset, replace or remove missing and infinite values, map `Benign` to `0` and all attack labels to `1`, split features from the target, and create train/validation/test sets. Fit scaling only on the training set to prevent data leakage.
+Cleaned the CIC-IDS2017 data with streaming reads, replaced infinity values, mapped `BENIGN` to `0` and attacks to `1`, removed per-file duplicates, created reproducible train/validation/test splits, fit imputation and scaling on training data only, and saved the processed arrays and preprocessor from `notebooks/02_data_preprocessing.ipynb`.
 
 ### Phase 3 - Baseline IDS
 
