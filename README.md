@@ -26,9 +26,18 @@ Loaded all eight CIC-IDS2017 CSV files and inspected columns, labels, class dist
 
 Cleaned the CIC-IDS2017 data with streaming reads, replaced infinity values, mapped `BENIGN` to `0` and attacks to `1`, removed per-file duplicates, created reproducible train/validation/test splits, fit imputation and scaling on training data only, and saved the processed arrays and preprocessor from `notebooks/02_data_preprocessing.ipynb`.
 
-### Phase 3 - Baseline IDS
+### ✅ Completed - Phase 3: Baseline IDS
 
-Build a centralized PyTorch MLP intrusion-detection model. Train and evaluate it with accuracy, precision, recall, F1-score, and a confusion matrix.
+Built and evaluated a centralized PyTorch MLP using the Phase 2 processed arrays. The baseline trained on 200,000 rows and evaluated on 50,000 validation rows:
+
+| Metric | Result |
+| --- | ---: |
+| Accuracy | 0.9344 |
+| Precision | 0.9762 |
+| Recall | 0.8706 |
+| F1-score | 0.9204 |
+
+The confusion matrix in `notebooks/03_baseline_ids.ipynb` was `[[27741, 462], [2820, 18977]]`, using `[[TN, FP], [FN, TP]]` ordering. The full test suite passed with 7 tests.
 
 ### Phase 4 - Federated learning
 
@@ -157,7 +166,7 @@ The current scripts are small smoke-test entry points. The phase implementation 
 ## Module responsibilities
 
 - `src/preprocessing.py`: CSV loading, missing-value handling, scaling, and categorical encoding.
-- `src/model.py`: current baseline model and evaluation metrics; the Phase 3 MLP will live here.
+- `src/model.py`: PyTorch MLP, legacy Random Forest baseline, and evaluation metrics.
 - `src/client.py` and `src/server.py`: client updates and federated orchestration.
 - `src/poisoning.py`: reproducible binary label-flip attack.
 - `src/detector.py`: robust aggregation and update anomaly detection.
@@ -168,48 +177,3 @@ The current scripts are small smoke-test entry points. The phase implementation 
 ## License
 
 This project is distributed under the MIT License. See [LICENSE](LICENSE).
-# FedGuard-XAI
-
-FedGuard-XAI is a research scaffold for explainable federated intrusion detection. It brings together tabular network-traffic preprocessing, a baseline IDS model, simulated poisoning attacks, client-update screening, robust aggregation, and model explanations.
-
-## Project context
-
-The project is organized around four experimental stages:
-
-1. Establish a clean federated-learning baseline.
-2. Inject controlled label-flipping or client-update poisoning.
-3. Compare detection and defense strategies, including robust aggregation.
-4. Explain model and client decisions with feature importance and SHAP.
-
-The `data/` folders are intentionally empty and ready for the selected IDS dataset. Experiment outputs belong under `results/`, and the notebooks mirror the research workflow.
-
-## Setup
-
-```powershell
-cd d:\FedGuard-XAI
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-```
-
-## Quick checks
-
-```powershell
-pytest
-python experiments\scripts\run_clean_fl.py
-python experiments\scripts\run_poisoned_fl.py
-python experiments\scripts\run_defense.py
-python experiments\scripts\run_xai.py
-```
-
-Use `experiments/configs/clean.yaml`, `poisoned.yaml`, and `defense.yaml` as the starting points for reproducible runs. The dashboard can be launched with `streamlit run dashboard/app.py` after metrics are generated.
-
-## Module map
-
-- `src/preprocessing.py`: CSV loading, missing-value handling, scaling, and categorical encoding.
-- `src/model.py`: baseline random-forest IDS and classification metrics.
-- `src/client.py` and `src/server.py`: client updates and aggregation.
-- `src/poisoning.py`: reproducible binary label-flip attack.
-- `src/detector.py`: robust update aggregation and outlier detection.
-- `src/xai.py`: model-native importances and lazy SHAP integration.
-- `notebooks/`: analysis checkpoints for the complete roadmap.
